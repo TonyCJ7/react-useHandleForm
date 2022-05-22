@@ -3,6 +3,6 @@ import App from "./App";
 describe("App", () => {
   it("test app", () => {
     render(<App />);
-    expect(screen.getByText("Sample Text")).toBeInTheDocument();
+    expect(screen.getByText("Sample Texts")).toBeInTheDocument();
   });
 });

@@ -4,6 +4,7 @@
   "description": "A simple field validator for forms using reack hooks",
   "main": "./src/useForm/index.js",
   "scripts": {
+    "typecheck": "tsc --noEmit --jsx react-jsx --pretty --allowJs",
     "lint": "eslint \"src/**/*.{tsx,ts}{,?}\"",
     "lint:fix": "eslint --fix  \"src/**/*.{tsx,ts}\"",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
@@ -13,7 +14,16 @@
     "build:useform": "babel src/useForm --ignore **/*.test.* --out-dir dist --extensions \".ts,.js\"",
     "generate-declarations": "tsc --project tsconfig.useForm.json",
     "prepublish": "npm run clean:dist && npm run generate-declarations && npm run build:useform",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js}": [
+      "npm run prettier",
+      "npm run lint:fix",
+      "npm run typecheck",
+      "npm run test"
+    ]
   },
   "repository": {
     "type": "git",
@@ -50,8 +60,10 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
+    "lint-staged": "^12.4.1",
     "prettier": "2.6.2",
     "rimraf": "^3.0.2",
     "ts-jest": "^28.0.2",
