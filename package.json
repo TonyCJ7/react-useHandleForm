@@ -1,8 +1,8 @@
 {
-  "name": "react-useform",
+  "name": "react-usevalidateform",
   "version": "1.0.0",
   "description": "A simple field validator for forms using reack hooks",
-  "main": "./src/useForm/index.js",
+  "main": "./src/useValidateForm/index.js",
   "scripts": {
     "typecheck": "tsc --noEmit --jsx react-jsx --pretty --allowJs",
     "lint": "eslint \"src/**/*.{tsx,ts}{,?}\"",
@@ -11,9 +11,9 @@
     "start": "webpack serve --config ./configs/webpack.development.ts",
     "build:docs": "webpack --config ./configs/webpack.production.ts",
     "clean:dist": "rimraf dist",
-    "build:useform": "babel src/useForm --ignore **/*.test.* --out-dir dist --extensions \".ts,.js\"",
-    "generate-declarations": "tsc --project tsconfig.useForm.json",
-    "prepublish": "npm run clean:dist && npm run generate-declarations && npm run build:useform",
+    "build:hook": "babel src/useValidateForm --ignore **/*.test.* --out-dir dist --extensions \".ts,.js\"",
+    "generate-types": "tsc --project tsconfig.useValidateForm.json",
+    "prepublish": "npm run clean:dist && npm run generate-types && npm run build:hook",
     "test": "jest",
     "prepare": "husky install"
   },
@@ -21,20 +21,21 @@
     "src/**/*.{ts,tsx,js}": [
       "npm run prettier",
       "npm run lint:fix",
+      "git add .",
       "npm run typecheck",
       "npm run test"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tony1496/react-useForm.git"
+    "url": "git+https://github.com/tony1496/react-useValidateForm.git"
   },
   "author": "TonyCJ",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tony1496/react-useForm/issues"
+    "url": "https://github.com/tony1496/react-useValidateForm/issues"
   },
-  "homepage": "https://github.com/tony1496/react-useForm#readme",
+  "homepage": "https://github.com/tony1496/react-useValidateForm#readme",
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.0",

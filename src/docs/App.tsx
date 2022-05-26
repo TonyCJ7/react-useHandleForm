@@ -1,5 +1,5 @@
 function App() {
-  return <div>Sample Texts</div>;
+  return <div>Document yet to be created</div>;
 }
 
 export default App;
