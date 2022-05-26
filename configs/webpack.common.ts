@@ -6,7 +6,14 @@ const config: Configuration = {
   entry: "./src/docs/index.tsx",
   resolve: {
     modules: [path.resolve(__dirname, "../src", "docs"), "node_modules"],
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: [".ts", ".tsx", ".js"],
+    alias: {
+      "react-usevalidateform": path.resolve(
+        __dirname,
+        "../src",
+        "useValidateForm"
+      )
+    }
   },
   devtool: "source-map",
   module: {
