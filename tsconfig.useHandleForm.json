@@ -1,6 +1,6 @@
 {
     "extends": "./tsconfig.json",
-    "include": ["src/useValidateForm"],
+    "include": ["src/useHandleForm"],
     "compilerOptions": {
         "noEmit": false,
         "declaration": true,

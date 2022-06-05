@@ -8,10 +8,10 @@ const config: Configuration = {
     modules: [path.resolve(__dirname, "../src", "docs"), "node_modules"],
     extensions: [".ts", ".tsx", ".js"],
     alias: {
-      "react-usevalidateform": path.resolve(
+      "react-usehandleform": path.resolve(
         __dirname,
         "../src",
-        "useValidateForm"
+        "useHandleForm"
       )
     }
   },

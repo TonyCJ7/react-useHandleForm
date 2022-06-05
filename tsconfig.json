@@ -13,7 +13,7 @@
         "sourceMap": true,
         "noEmit": true,
         "paths": {
-            "react-usevalidateform":["./useValidateForm"]
+            "react-usehandleform":["./useHandleForm"]
         }
     }
 }

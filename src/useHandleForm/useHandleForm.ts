@@ -2,9 +2,9 @@ import { useRef } from "react";
 
 export type a = string;
 
-const useValidateForm = () => {
+const useHandleForm = () => {
   const val = useRef();
   return val;
 };
 
-export default useValidateForm;
+export default useHandleForm;

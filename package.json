@@ -2,7 +2,7 @@
   "name": "react-usevalidateform",
   "version": "1.0.0",
   "description": "A simple field validator for forms using reack hooks",
-  "main": "./src/useValidateForm/index.js",
+  "main": "./src/useHandleForm/index.js",
   "scripts": {
     "typecheck": "tsc --noEmit --jsx react-jsx --pretty --allowJs",
     "lint": "eslint \"src/**/*.{tsx,ts}{,?}\"",
@@ -11,8 +11,8 @@
     "start": "webpack serve --config ./configs/webpack.development.ts",
     "build:docs": "webpack --config ./configs/webpack.production.ts",
     "clean:dist": "rimraf dist",
-    "build:hook": "babel src/useValidateForm --ignore **/*.test.* --out-dir dist --extensions \".ts,.js\"",
-    "generate-types": "tsc --project tsconfig.useValidateForm.json",
+    "build:hook": "babel src/useHandleForm --ignore **/*.test.* --out-dir dist --extensions \".ts,.js\"",
+    "generate-types": "tsc --project tsconfig.useHandleForm.json",
     "prepublish": "npm run clean:dist && npm run generate-types && npm run build:hook",
     "test": "jest",
     "prepare": "husky install"
@@ -21,21 +21,20 @@
     "src/**/*.{ts,tsx,js}": [
       "npm run prettier",
       "npm run lint:fix",
-      "git add .",
       "npm run typecheck",
-      "npm run test"
+      "jest --passWithNoTests"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tony1496/react-useValidateForm.git"
+    "url": "git+https://github.com/tony1496/react-useHandleForm.git"
   },
   "author": "TonyCJ",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tony1496/react-useValidateForm/issues"
+    "url": "https://github.com/tony1496/react-useHandleForm/issues"
   },
-  "homepage": "https://github.com/tony1496/react-useValidateForm#readme",
+  "homepage": "https://github.com/tony1496/react-useHandleForm#readme",
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.0",
@@ -47,6 +46,10 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@types/jest": "^27.5.1",
+    "@types/node": "^17.0.35",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.25",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
@@ -76,10 +79,6 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@types/node": "^17.0.35",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.4",
-    "@types/react-router-dom": "^5.3.3",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "styled-components": "^5.3.5",
