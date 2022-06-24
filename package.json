@@ -15,6 +15,7 @@
     "generate-types": "tsc --project tsconfig.useHandleForm.json",
     "prepublish": "npm run clean:dist && npm run generate-types && npm run build:hook",
     "test": "jest",
+    "coverage": "jest --coverage",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -57,11 +58,12 @@
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-jest": "^3.0.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
-    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.0",

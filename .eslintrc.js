@@ -6,7 +6,9 @@ module.exports = {
   extends: [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:import/recommended"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -14,9 +16,22 @@ module.exports = {
       jsx: true
     },
     ecmaVersion: "latest",
-    sourceType: "module"
+    sourceType: "module",
+    project: "./tsconfig.json"
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint", "react-hooks"],
+  overrides: [
+    {
+      files: ["**/__tests__/**", "**/*.test.**"],
+      settings: {
+        "import/resolver": {
+          jest: {
+            jestConfigFile: path.join(__dirname, "./jest.config.ts")
+          }
+        }
+      }
+    }
+  ],
   rules: {
     "react/react-in-jsx-scope": 0,
     "prettier/prettier": [
