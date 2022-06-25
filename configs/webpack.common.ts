@@ -8,11 +8,7 @@ const config: Configuration = {
     modules: [path.resolve(__dirname, "../src", "docs"), "node_modules"],
     extensions: [".ts", ".tsx", ".js"],
     alias: {
-      "react-usehandleform": path.resolve(
-        __dirname,
-        "../src",
-        "useHandleForm"
-      )
+      "react-usehandleform": path.resolve(__dirname, "../src", "useHandleForm")
     }
   },
   devtool: "source-map",

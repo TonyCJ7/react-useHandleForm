@@ -1,8 +1,10 @@
 {
     "extends": "./tsconfig.json",
     "include": ["src/useHandleForm"],
+    "exclude":["**/__tests__/*"],
     "compilerOptions": {
         "noEmit": false,
+        "rootDir": "src/useHandleForm",
         "declaration": true,
         "emitDeclarationOnly": true,
         "outDir": "dist",
