@@ -14,7 +14,7 @@ const useRegisterField = <FormValues>(
 
   const handleFieldChange = getFieldChangeHandler(dispatch);
 
-  const handleChange = getChangeHandler(handleFieldChange);
+  const handleChange = getChangeHandler(dispatch, handleFieldChange);
 
   const registerField = (options: RegisterFieldOptions<FormValues>) => {
     const {
@@ -36,11 +36,13 @@ const useRegisterField = <FormValues>(
 
     const { ref, onChange } = fieldAttrMap.current[name];
 
+    const valueKey = type === "checkbox" ? "checked" : "value";
+
     const commonProps = {
       name,
       type,
       ref,
-      value: formValues[name],
+      [valueKey]: formValues[name],
       onChange
     };
 
