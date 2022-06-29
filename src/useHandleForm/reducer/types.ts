@@ -16,7 +16,7 @@ export type FormState<FormValues> = {
 
 export type UpdateFormValuePayload = {
   name: string;
-  value: string | number;
+  value: string | number | boolean;
 };
 
 export type UpdateFormValueAction = ActionWithPayload<

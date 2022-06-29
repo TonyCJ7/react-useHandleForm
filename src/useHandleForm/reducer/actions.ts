@@ -12,7 +12,7 @@ import {
 
 export const updateFormValue = (
   name: string,
-  value: string | number
+  value: string | number | boolean
 ): UpdateFormValueAction => ({
   type: UPDATE_FORM_VALUE,
   payload: {
