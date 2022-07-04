@@ -5,12 +5,14 @@ import {
   getFormValidator
 } from "./handlers";
 import Form from "./Form";
+import { ErrorMessages } from "./types";
 
 type OnSubmit = () => void;
 
 const useHandleForm = <FormValues>(
   initialValue: FormValues,
-  onSubmit: OnSubmit
+  onSubmit: OnSubmit,
+  errorMessages: ErrorMessages<FormValues>
 ) => {
   const [{ errors, formValues, isSubmitting }, dispatch] =
     useHandleReducer<FormValues>(initialValue);
@@ -21,7 +23,11 @@ const useHandleForm = <FormValues>(
     dispatch
   );
 
-  const validateFields = getFormValidator<FormValues>(fieldAttrMap, dispatch);
+  const validateFields = getFormValidator<FormValues>(
+    fieldAttrMap,
+    dispatch,
+    errorMessages
+  );
 
   const handleSubmit = useHandleSubmit<FormValues>(
     isSubmitting,
