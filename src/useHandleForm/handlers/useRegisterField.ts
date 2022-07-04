@@ -20,7 +20,6 @@ const useRegisterField = <FormValues>(
     const {
       name,
       type,
-      errorMessages,
       errorPropName = "error",
       shouldReturnErrorProp = false
     } = options;
@@ -32,7 +31,6 @@ const useRegisterField = <FormValues>(
         onChange: handleChange(type)
       };
     }
-    fieldAttrMap.current[name].errorMessages = errorMessages;
 
     const { ref, onChange } = fieldAttrMap.current[name];
 

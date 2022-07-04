@@ -2,7 +2,6 @@ import { Reducer, RefObject } from "react";
 import {
   IndexFromObjectKeys,
   Keys,
-  ErrorMessage,
   FieldType,
   InputChangeHandler
 } from "../types";
@@ -12,7 +11,6 @@ export type FieldAttributes<FormValues> = {
   name: Keys<FormValues>;
   ref: RefObject<HTMLInputElement>;
   onChange: InputChangeHandler;
-  errorMessages?: ErrorMessage;
 };
 
 export type FieldAttributesMap<FormValues> = IndexFromObjectKeys<
@@ -25,7 +23,6 @@ export type RegisterFieldOptions<FormValues> = {
   type: FieldType;
   shouldReturnErrorProp?: boolean;
   errorPropName?: string;
-  errorMessages?: ErrorMessage;
 };
 
 export type ReducerType<FormValues> = Reducer<
